@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% if posts %}
+  {% for post in posts %}
+    <div class="main_container">
+      <div class = "post_header_container">
+        <div class = "header_item profileImage">
+          <img src="/profile/{{post.id}}.jpg" width="60vw" style="clip-path: circle(at center); margin-left: 10px;" alt="no profile">
+        </div>
+        <div class = "header_item userId" style="font-size: 24px;">
+          {{post.id}}
+        </div>
+        <div class = "header_item follow">
+          <button style="display : flex; align-items: center; border : none; border-radius: 6px; padding : 8px 16px; cursor : pointer; background-color: rgb(218, 218, 218); color : black;">
+            <span class="material-icons-outlined" style="font-family: Material Icons; font-size: 20px; margin-right: 5px;">
+            add_circle_outline</span>
+            <span style="font-size : 16px;">Follow</span>
+          </button>
+        </div>
+        <div>
+        </div>
+        {% if post.id === isLoggedIn.id %}
+        <div class = "header_item edit" style="flex-grow: 1; text-align: right; margin-right: 20px; ">
+          <a href="/post/edit/{{post._id}}" style="text-decoration: none; color: black;">
+            <span style="font-family: Material Icons;">edit</span>
+            edit
+          </a>
+          <br/>
+          <a href="/post/delete/{{post._id}}" style="text-decoration: none; color: black;">
+            <span style="font-family: Material Icons;">delete</span>
+            delete
+          </a>
+        </div>
+        {% endif %}
+      </div>
+
+      <hr style="width:95%; height: 1px;background-color: rgb(143, 143, 143); border: none;">
+
+      <div class = "post_body_contaier">
+        <div class = "post_item image">
+          <img src={{post.img}} width ="60%" style="display:block; margin : 10px auto;">
+        </div>  
+        <div class="post_item content" style="margin : 20px 0; text-align: center;">
+          {{post.content}}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+{% endblock %}

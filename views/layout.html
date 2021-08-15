@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class = "top_container">
+      <div class="logo_item" style="margin-left : 20px; width:10%;"><a href="/" style="text-decoration: none; color: black; font-family: 'Permanent Marker', cursive; font-size : 24px;">my app</a></div>
+      <div class="search_item" style=" width:75%; text-align: center;">
+        <form action="/search">
+          <input type="text" id="search_content" placeholder="search">
+        </form>
+      </div>
+      <div class=auth_item" style="display : flex; align-items : center; margin-right : 20px;">
+        {% if isLoggedIn===false or isLoggedIn===undefined %}
+          <a href="/auth/login" style="text-decoration: none; color: black;">login</a>&nbsp;&nbsp;<a href="/auth/join" style="text-decoration: none; color:black;">register</a>
+        {% else %}
+          <span class="toggleMenu" onclick="toggleMenu()" style="font-family: Material Icons; align-items: center; cursor: pointer; font-size: 16px;">more_horiz</span>
+          <div id="dropdown" class="dropdown-content">
+            <a href="/post/{{isLoggedIn.id}}">write a post</a>
+            <a href="/">
+          </div>
+          <a href="/{{isLoggedIn.id}}" style="text-decoration: none; color: black; margin-right : 10px;" >profile</a> 
+          <a href="/auth/logout" style="text-decoration: none; color: black;">logout</a>
+        {% endif %}
+      </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+
+    {% block script %}
+    {% endblock %}
+    <script>
+      toggleMenu = ()=>{
+        document.getElementById("dropdown").classList.toggle('show');
+      }
+      window.onclick = (e)=>{
+        if (!e.target.matches('.toggleMenu')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </Script>
+  </body>
+</html>
+

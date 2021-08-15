@@ -1,0 +1,250 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.top_container{
+  margin-top : 15px;
+  margin-bottom : 15px;
+  display : flex;
+  flex-direction : row;
+  flex-wrap : nowrap;
+  justify-content : space-between;
+  align-items : center;
+}
+
+.search_item{
+  background-color: transparent;
+  border-radius: 0;
+  border:none;  
+}
+
+#search_content{
+  width : 300px;
+  border : none;
+  border-bottom: 1px solid #525252;
+}
+
+#search_content:focus{
+  outline : none;
+  border : none;
+  border-bottom: 1px solid #525252;
+}
+
+.join_container{
+  height : 400px;
+  display : flex;
+  flex-direction : column;
+  flex-wrap : nowrap;
+  align-items : center;
+  justify-content : center;
+}
+
+.join_item{
+  font-weight: bold;
+  position : relative;
+  width: 180px;
+  height : 40px;
+  margin : 10px;
+  text-align : center;
+  border : 2px solid #525252;
+  line-height : 40px;
+}
+
+.join_local_container{
+  width : 100%;
+  height : 500px;
+  display : flex;
+  flex-direction : column;
+  flex-wrap : wrap;
+  justify-items : start;
+  justify-content: center;
+  align-items: center;
+}
+.join_local_container form{
+  padding : 10px;
+}
+
+.join_local_item{
+  flex-basis: 350px;
+  margin : 0 0 15px 0;
+  height : 40px;
+}
+
+.join_local_input{
+  border : none;
+  border-bottom: 1px solid#969696;
+  width : 300px;
+  height : 40px;
+}
+
+.join_button input[type='submit']{
+  width: 50%; background-color: #4d6f7a; color: white; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 16px; cursor: pointer;
+}
+
+.join_local_input:focus{
+  outline : none;
+}
+
+.container{
+  display : flex;
+  justify-content: center;
+	align-items: center;
+  text-align: center;
+	flex-direction: row;
+  height : 50vh;
+  width : 50vw;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+  position: relative;
+  border-radius : 10px;
+	overflow: hidden;
+	/*width: 768px;*/
+  max-width: 100%;
+	min-height: 480px;
+  margin : 40px auto;
+}
+
+.login_container{
+  flex-basis : 50%;
+  text-align: center;
+  display : flex;
+  flex-direction: column;
+}
+
+.login_item input{
+  margin : 5px auto;
+  height : 30px;
+  width : 150px;
+  border : 1px solid #bbbbbb;
+}
+
+.login_item input:focus{
+  outline : none;
+}
+
+.login_item_button input[type='submit']{
+  width: 35%; 
+  background-color: #FF4B2B; 
+  color: white; 
+  margin: 8px 0; 
+  border: none; 
+  border-radius: 20px; 
+  cursor: pointer;
+  font-size: 12px;
+  padding: 12px 45px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.overlay_container{
+  flex-basis : 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height : 100%;
+  justify-content: center;
+  background-color: #FF416C;
+  background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+}
+
+.overlay_item{
+  margin-left : 50px;
+  margin-right : 50px; 
+}
+
+.overlay_item a{
+  width : 35%;
+  height : 20px;
+  border-radius: 20px;
+  border : 1px solid #FFFFFF;
+  padding : 12px 45px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.post_container{
+  display : flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 600px;
+}
+.post_item{
+  min-width: 50vw;
+}
+
+.post_header_container{
+  display: flex;
+  justify-content : flex-start;
+  align-items: center;
+  flex-direction: row;
+  width : 50vw;
+  margin-top : 10px;
+}
+
+.header_item{
+  margin-left: 10px;
+}
+
+.post_body_container{
+  display : flex;
+  flex-direction: column;
+  min-height: 600px;
+}
+
+label[for="img"]{
+  border-radius: 6px;
+  background-color: #3d5a56;
+  width : 60px;
+  color : #fff;
+  font-size: 8px;
+  text-align: center;
+  padding : 3px 9px;
+}
+
+.main_container{
+  background-color: white; 
+  width:50vw; 
+  min-height : 80vh; 
+  margin : 40px auto; 
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); 
+  display : flex;
+  flex-direction: column;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 60px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.show {display: block;}
+
+.dropdown-content a {
+  color: black;
+  padding: 6px 8px;
+  text-decoration: none;
+  display: block;
+
+}

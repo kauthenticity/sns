@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class='join_local_container'>
+  <form action="/auth/join/local" method="post">
+    <div class='join_local_item'>
+      <input type="text" class="join_local_input" name="username" placeholder = "username">
+    </div>
+    <div class='join_local_item'>
+      <input type="text" class="join_local_input" name="id" placeholder = "id">
+    </div>
+    <div class='join_local_item'>
+      <input type="password" class="join_local_input" name="password" placeholder ="password" onkeyup="confirmPW()">
+    </div>
+    <div class='join_local_item'>
+      <input type="password" class="join_local_input" name="password_check" placeholder = "confirm password" onkeyup="confirmPW()">
+    </div>
+    <div class='join_local_item'>
+      <span id="password_check_icon" style="font-size:12px; text-align:right;"></span>
+    </div>
+    <div class='join_button'>
+      <input type="submit" value='registration'>
+    </div>
+  </form>
+</div>
+{% endblock %}
+
+{% block script %}
+  <script>
+    confirmPW = ()=>{
+      var pw = document.querySelector('input[name=password]');
+      var pw_check = document.querySelector('input[name=password_check]');
+      var pw_check_icon = document.querySelector('#password_check_icon');
+
+      if(!pw.value && !pw_check.value){
+        pw_check_icon.innerHTML = '';
+      }
+      else if(pw.value === pw_check.value){
+        pw_check_icon.style.color = '#3c803c'
+        pw_check_icon.innerText = 'Password Confirmed';
+      
+      }
+      else{
+        pw_check_icon.style.color = '#873636'
+        pw_check_icon.innerText = 'Password Not Matched';
+      }
+    }
+  </script>
+{% endblock %}
